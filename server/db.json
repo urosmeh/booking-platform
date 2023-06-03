@@ -1,9 +1,90 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+  "salons": [
+    {
+      "id": 1,
+      "name": "mix",
+      "city": "Ljubljana",
+      "address": "ulica1",
+      "owner": "Janez Novak",
+      "email": "mix@test.com",
+      "phone": "031123123",
+      "categoryId": 1,
+      "description": "Lorem ipsum dolor sit amet."
+    },
+    {
+      "id": 2,
+      "name": "Boom",
+      "city": "Velenje",
+      "address": "Stantetova 1",
+      "owner": "Jana Hren",
+      "email": "boom@test.com",
+      "phone": "031123123",
+      "categoryId": 1,
+      "description": "Lorem ipsum dolor sit amet."
+    },
+    {
+      "id": 3,
+      "name": "Macho",
+      "city": "Velenje",
+      "address": "Foitova 100",
+      "owner": "Ana Banana",
+      "email": "macho@test.com",
+      "phone": "031123123",
+      "categoryId": 2,
+      "description": "Lorem ipsum dolor sit amet."
+    }
   ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+  "workingHours": [
+    {
+      "salonId": 1,
+      "mon": "8-16",
+      "tue": "8-16",
+      "wen": "8-16",
+      "thu": "8-16",
+      "fri": "8-16",
+      "sat": null,
+      "sun": null
+    },
+    {
+      "salonId": 2,
+      "mon": "8-16",
+      "tue": "8-16",
+      "wen": "8-16",
+      "thu": "8-16",
+      "fri": "8-16",
+      "sat": "8-16",
+      "sun": null
+    },
+    {
+      "salonId": 3,
+      "mon": "9-16",
+      "tue": "9-16",
+      "wen": "9-16",
+      "thu": "9-16",
+      "fri": "9-16",
+      "sat": "9-13",
+      "sun": null
+    }
   ],
-  "profile": { "name": "typicode" }
+  "users": [
+    {
+      "userId": 1,
+      "username": "urosmeh",
+      "password": "geslo123"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "title": "Hair"
+    },
+    {
+      "id": 2,
+      "title": "Nails"
+    },
+    {
+      "id": 3,
+      "title": "Makeup"
+    }
+  ]
 }
