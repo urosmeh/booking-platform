@@ -76,6 +76,17 @@
       "phone": "031123123",
       "categoryId": 1,
       "description": "Lorem ipsum dolor sit amet."
+    },
+    {
+      "id": 8,
+      "name": "Salon1000",
+      "city": "Ljubljana",
+      "address": "ulica1",
+      "owner": "Janez Novak",
+      "email": "mix@test.com",
+      "phone": "031123123",
+      "categoryId": 2,
+      "description": "Lorem ipsum dolor sit amet."
     }
   ],
   "workingHours": [
@@ -120,15 +131,23 @@
   "categories": [
     {
       "id": 1,
-      "title": "Hair"
+      "title": "Hair",
+      "img": "https://img.icons8.com/ios/100/000000/haircut.png"
     },
     {
       "id": 2,
-      "title": "Nails"
+      "title": "Nails",
+      "img": "https://img.icons8.com/ios/100/000000/nails.png"
     },
     {
       "id": 3,
-      "title": "Makeup"
+      "title": "Makeup",
+      "img": "https://img.icons8.com/ios/100/eyebrow.png"
+    },
+    {
+      "id": 4,
+      "title": "Barber",
+      "img": "https://img.icons8.com/ios/100/barber-clippers.png"
     }
   ]
 }
