@@ -1,25 +1,44 @@
-import { useState } from "react";
-
-// import "./App.css";
 import { useGetSalonsQuery } from "./store";
-import { Box, Flex } from "@chakra-ui/react";
+import { Flex, Input } from "@chakra-ui/react";
+import { SalonList } from "./components/Salon/SalonList";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const { data } = useGetSalonsQuery();
+  const { data: salons } = useGetSalonsQuery();
+  const [search, setSearch] = useState<string>("");
+  const [filteredSalons, setFilteredSalons] = useState(salons);
+
+  useEffect(() => {
+    if (search) {
+      setFilteredSalons(
+        salons?.filter((s) =>
+          s.name.toLowerCase().includes(search.toLowerCase())
+        ) || []
+      );
+    } else {
+      setFilteredSalons(salons);
+    }
+  }, [search, setFilteredSalons, salons]);
 
   return (
-    <>
-      <Box bg="brand.100">
-        <Flex direction={["column", "row"]}>
-          <Box>
-            {data?.map((salon) => (
-              <Box>{salon.name}</Box>
-            ))}
-          </Box>
-        </Flex>
-      </Box>
-    </>
+    <Flex
+      justifyContent={"center"}
+      p={10}
+      direction={"column"}
+      alignItems={"center"}
+      gap={10}
+    >
+      <Input
+        placeholder="Salon name"
+        size="md"
+        value={search}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setSearch(e.target.value)
+        }
+        width={["75%", "33%"]}
+      />
+      <SalonList salons={filteredSalons} />
+    </Flex>
   );
 }
 

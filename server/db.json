@@ -32,6 +32,50 @@
       "phone": "031123123",
       "categoryId": 2,
       "description": "Lorem ipsum dolor sit amet."
+    },
+    {
+      "id": 4,
+      "name": "Salon4",
+      "city": "Ljubljana",
+      "address": "ulica1",
+      "owner": "Janez Novak",
+      "email": "mix@test.com",
+      "phone": "031123123",
+      "categoryId": 1,
+      "description": "Lorem ipsum dolor sit amet."
+    },
+    {
+      "id": 5,
+      "name": "Salon5",
+      "city": "Ljubljana",
+      "address": "ulica1",
+      "owner": "Janez Novak",
+      "email": "mix@test.com",
+      "phone": "031123123",
+      "categoryId": 1,
+      "description": "Lorem ipsum dolor sit amet."
+    },
+    {
+      "id": 6,
+      "name": "Salon6",
+      "city": "Ljubljana",
+      "address": "ulica1",
+      "owner": "Janez Novak",
+      "email": "mix@test.com",
+      "phone": "031123123",
+      "categoryId": 1,
+      "description": "Lorem ipsum dolor sit amet."
+    },
+    {
+      "id": 7,
+      "name": "Salon7",
+      "city": "Ljubljana",
+      "address": "ulica1",
+      "owner": "Janez Novak",
+      "email": "mix@test.com",
+      "phone": "031123123",
+      "categoryId": 1,
+      "description": "Lorem ipsum dolor sit amet."
     }
   ],
   "workingHours": [
