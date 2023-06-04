@@ -1,24 +1,15 @@
-import { useState } from "react";
-
-// import "./App.css";
 import { useGetSalonsQuery } from "./store";
-import { Box, Flex } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
+import { SalonList } from "./components/Salon/SalonList";
 
 function App() {
-  const [count, setCount] = useState(0);
   const { data } = useGetSalonsQuery();
 
   return (
     <>
-      <Box bg="brand.100">
-        <Flex direction={["column", "row"]}>
-          <Box>
-            {data?.map((salon) => (
-              <Box>{salon.name}</Box>
-            ))}
-          </Box>
-        </Flex>
-      </Box>
+      <Flex direction={"row"} justifyContent={"center"}>
+        <SalonList salons={data} />
+      </Flex>
     </>
   );
 }
