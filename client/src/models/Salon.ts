@@ -8,4 +8,5 @@ export type Salon = {
   phone: string;
   categoryId: number;
   description: string;
+  img: string;
 };
