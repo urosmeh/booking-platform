@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import { Salon } from "../../models/Salon";
 import { SalonListItem } from "./SalonListItem";
 
@@ -16,13 +16,11 @@ export const SalonList = ({ salons }: SalonListProps) => {
 
   return (
     <Flex gap="10" direction={"column"} alignItems={"center"}>
-      <Grid templateColumns="repeat(4, 1fr)" gap={10}>
+      <SimpleGrid columns={[2, 3, 4]} gap={10}>
         {salons.map((salon) => (
-          <GridItem key={salon.id}>
-            <SalonListItem salon={salon} />
-          </GridItem>
+          <SalonListItem salon={salon} key={salon.id} />
         ))}
-      </Grid>
+      </SimpleGrid>
     </Flex>
   );
 };

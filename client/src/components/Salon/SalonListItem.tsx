@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, Heading, Image, Stack } from "@chakra-ui/react";
+import { Card, CardBody, Image, Stack, Text } from "@chakra-ui/react";
 import { Salon } from "../../models/Salon";
 
 type SalonListItemProps = {
@@ -7,15 +7,19 @@ type SalonListItemProps = {
 
 export const SalonListItem = ({ salon }: SalonListItemProps) => {
   return (
-    <Box>
-      <Card>
-        <CardBody>
-          <Image src="https://placehold.co/150x150/png" />
-          <Stack alignItems={"center"}>
-            <Heading>{salon.name}</Heading>
-          </Stack>
-        </CardBody>
-      </Card>
-    </Box>
+    <Card>
+      <CardBody textAlign={"center"}>
+        <Image
+          src="https://placehold.co/150x150/png"
+          borderRadius={"md"}
+          m={"0 auto"}
+        />
+        <Stack alignItems={"center"}>
+          <Text fontSize={"lg"} overflowWrap={"break-word"}>
+            {salon.name}
+          </Text>
+        </Stack>
+      </CardBody>
+    </Card>
   );
 };
