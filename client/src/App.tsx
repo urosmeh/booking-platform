@@ -1,5 +1,5 @@
 import { useGetSalonsQuery } from "./store";
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { SalonList } from "./components/Salon/SalonList";
 
 function App() {

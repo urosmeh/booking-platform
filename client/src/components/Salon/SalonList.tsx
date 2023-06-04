@@ -1,4 +1,4 @@
-import { Box, Flex, Text, HStack, Wrap, WrapItem } from "@chakra-ui/react";
+import { Box, Flex, Text, Wrap, WrapItem } from "@chakra-ui/react";
 import { Salon } from "../../models/Salon";
 import { SalonListItem } from "./SalonListItem";
 
