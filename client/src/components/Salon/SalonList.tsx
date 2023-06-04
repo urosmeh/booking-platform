@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Wrap, WrapItem } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
 import { Salon } from "../../models/Salon";
 import { SalonListItem } from "./SalonListItem";
 
@@ -16,14 +16,13 @@ export const SalonList = ({ salons }: SalonListProps) => {
 
   return (
     <Flex gap="10" direction={"column"} alignItems={"center"}>
-      <Text fontSize="xl">List of salons</Text>
-      <Wrap spacing={4}>
+      <Grid templateColumns="repeat(4, 1fr)" gap={10}>
         {salons.map((salon) => (
-          <WrapItem key={salon.id} w="20%" justifyContent={"center"}>
+          <GridItem key={salon.id}>
             <SalonListItem salon={salon} />
-          </WrapItem>
+          </GridItem>
         ))}
-      </Wrap>
+      </Grid>
     </Flex>
   );
 };
