@@ -40,16 +40,17 @@ The server-side of the application is built using json-server. It provides users
 ## Getting Started
 
 To get a local copy up and running, follow these simple steps:
+1. Use node version 18
 
-1. Clone the repository: `git clone https://github.com/urosmeh/booking-platform.git`
+2. Clone the repository: `git clone https://github.com/urosmeh/booking-platform.git`
 
-2. Navigate into the project directory: `cd booking-platform`
+3. Navigate into the project directory: `cd booking-platform`
 
-3. Install dependencies:
+4. Install dependencies:
   - For the client: `cd client` and then `npm install`
   - For the server: `cd server` and then `npm install`
 
-4. Run the application:
+5. Run the application:
   - Go to root directory and run `npm start` to run client and server. 
   - Start only server: `cd server` and then `npm start`
   - Start only client: `cd client` and then `npm run dev`
