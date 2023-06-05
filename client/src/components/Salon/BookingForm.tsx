@@ -13,7 +13,6 @@ import {
   useToast,
 } from "@chakra-ui/react";
 
-import "react-datepicker/dist/react-datepicker.css";
 import { useState, useEffect, useCallback } from "react";
 import { usePostBookingMutation } from "../../store";
 
@@ -74,32 +73,10 @@ export const BookingForm = ({ user, salon }: BookingFormProps) => {
   };
 
   const onSubmit: SubmitHandler<BookingFormType> = (formData) => {
-    const selectedService = services.find(
-      (service) => service.id === formData.service
-    );
-
     postBooking({
       userId: user.id,
       salonId: salon.id,
-      at: new Date(serviceDate),
-    });
-
-    toast({
-      title: "Booking submitted",
-      description: `You've successfully submitted your booking for service: ${
-        selectedService?.title
-      } for ${salon.name} at ${new Date(serviceDate).toLocaleString("en-US", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-        hour12: true,
-      })}!`,
-      status: "success",
-      duration: 3000,
-      isClosable: true,
+      at: new Date(formData.serviceDate),
     });
 
     reset(defaultValues);
