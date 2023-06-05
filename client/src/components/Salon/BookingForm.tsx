@@ -84,24 +84,6 @@ export const BookingForm = ({ user, salon }: BookingFormProps) => {
       at: new Date(serviceDate),
     });
 
-    toast({
-      title: "Booking submitted",
-      description: `You've successfully submitted your booking for service: ${
-        selectedService?.title
-      } for ${salon.name} at ${new Date(serviceDate).toLocaleString("en-US", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-        hour12: true,
-      })}!`,
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-    });
-
     reset(defaultValues);
   };
 
