@@ -1,19 +1,23 @@
-import { useState } from "react";
-
-import "./App.css";
+import { Flex } from "@chakra-ui/react";
+import { Home } from "./pages/Home";
+import { Navbar } from "./layouts/Navbar";
+import { Route, Routes } from "react-router-dom";
+import { Bookings } from "./pages/Bookings";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-    </>
+    <Flex
+      justifyContent={"center"}
+      direction={"column"}
+      alignItems={"center"}
+      gap={10}
+    >
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/bookings" element={<Bookings />} />
+      </Routes>
+    </Flex>
   );
 }
 

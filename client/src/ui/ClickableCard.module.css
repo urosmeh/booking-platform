@@ -1,0 +1,9 @@
+.clickable {
+  cursor: pointer;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.clickable:hover {
+  transform: scale(1.2);
+  filter: none;
+}

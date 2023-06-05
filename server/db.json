@@ -1,9 +1,199 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+  "salons": [
+    {
+      "id": 1,
+      "name": "mix",
+      "city": "Ljubljana",
+      "address": "ulica1",
+      "owner": "Janez Novak",
+      "email": "mix@test.com",
+      "phone": "031123123",
+      "categoryId": 1,
+      "description": "Lorem ipsum dolor sit amet.",
+      "img": "https://picsum.photos/seed/1/150"
+    },
+    {
+      "id": 2,
+      "name": "Boom",
+      "city": "Velenje",
+      "address": "Stantetova 1",
+      "owner": "Jana Hren",
+      "email": "boom@test.com",
+      "phone": "031123123",
+      "categoryId": 1,
+      "description": "Lorem ipsum dolor sit amet.",
+      "img": "https://picsum.photos/seed/2/150"
+    },
+    {
+      "id": 3,
+      "name": "Macho",
+      "city": "Velenje",
+      "address": "Foitova 100",
+      "owner": "Ana Banana",
+      "email": "macho@test.com",
+      "phone": "031123123",
+      "categoryId": 2,
+      "description": "Lorem ipsum dolor sit amet.",
+      "img": "https://picsum.photos/seed/3/150"
+    },
+    {
+      "id": 4,
+      "name": "Salon4",
+      "city": "Ljubljana",
+      "address": "ulica1",
+      "owner": "Janez Novak",
+      "email": "mix@test.com",
+      "phone": "031123123",
+      "categoryId": 1,
+      "description": "Lorem ipsum dolor sit amet.",
+      "img": "https://picsum.photos/seed/4/150"
+    },
+    {
+      "id": 5,
+      "name": "Salon5",
+      "city": "Ljubljana",
+      "address": "ulica1",
+      "owner": "Janez Novak",
+      "email": "mix@test.com",
+      "phone": "031123123",
+      "categoryId": 1,
+      "description": "Lorem ipsum dolor sit amet.",
+      "img": "https://picsum.photos/seed/5/150"
+    },
+    {
+      "id": 6,
+      "name": "Salon6",
+      "city": "Ljubljana",
+      "address": "ulica1",
+      "owner": "Janez Novak",
+      "email": "mix@test.com",
+      "phone": "031123123",
+      "categoryId": 1,
+      "description": "Lorem ipsum dolor sit amet.",
+      "img": "https://picsum.photos/seed/6/150"
+    },
+    {
+      "id": 7,
+      "name": "Salon7",
+      "city": "Ljubljana",
+      "address": "ulica1",
+      "owner": "Janez Novak",
+      "email": "mix@test.com",
+      "phone": "031123123",
+      "categoryId": 1,
+      "description": "Lorem ipsum dolor sit amet.",
+      "img": "https://picsum.photos/seed/7/150"
+    },
+    {
+      "id": 8,
+      "name": "Salon1000",
+      "city": "Ljubljana",
+      "address": "ulica1",
+      "owner": "Janez Novak",
+      "email": "mix@test.com",
+      "phone": "031123123",
+      "categoryId": 2,
+      "description": "Lorem ipsum dolor sit amet.",
+      "img": "https://picsum.photos/seed/8/150"
+    }
   ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+  "workingHours": [
+    {
+      "salonId": 1,
+      "mon": "8-16",
+      "tue": "8-16",
+      "wen": "8-16",
+      "thu": "8-16",
+      "fri": "8-16",
+      "sat": null,
+      "sun": null
+    },
+    {
+      "salonId": 2,
+      "mon": "8-16",
+      "tue": "8-16",
+      "wen": "8-16",
+      "thu": "8-16",
+      "fri": "8-16",
+      "sat": "8-16",
+      "sun": null
+    },
+    {
+      "salonId": 3,
+      "mon": "9-16",
+      "tue": "9-16",
+      "wen": "9-16",
+      "thu": "9-16",
+      "fri": "9-16",
+      "sat": "9-13",
+      "sun": null
+    }
   ],
-  "profile": { "name": "typicode" }
+  "users": [
+    {
+      "userId": 1,
+      "username": "urosmeh",
+      "password": "geslo123"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "title": "Hair",
+      "img": "https://img.icons8.com/ios/100/000000/haircut.png"
+    },
+    {
+      "id": 2,
+      "title": "Nails",
+      "img": "https://img.icons8.com/ios/100/000000/nails.png"
+    },
+    {
+      "id": 3,
+      "title": "Makeup",
+      "img": "https://img.icons8.com/ios/100/eyebrow.png"
+    },
+    {
+      "id": 4,
+      "title": "Barber",
+      "img": "https://img.icons8.com/ios/100/barber-clippers.png"
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "userId": 1,
+      "salonId": 1,
+      "at": "2023-06-05T17:47:00.000Z"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "salonId": 1,
+      "at": "2023-06-05T17:47:00.000Z"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "salonId": 2,
+      "at": "2023-06-05T17:57:00.000Z"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "salonId": 2,
+      "at": "2023-06-05T18:26:00.000Z"
+    },
+    {
+      "userId": 1,
+      "salonId": 2,
+      "at": "2023-06-05T19:47:00.000Z",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "salonId": 2,
+      "at": "2023-06-05T19:48:00.000Z",
+      "id": 6
+    }
+  ]
 }

@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "concurrently": "^8.1.0"
+  },
+  "scripts": {
+    "start:client": "cd client && npm run dev",
+    "start:server": "npx json-server --watch server/db.json --port 3000",
+    "start": "concurrently \"npm run start:client\" \"npm run start:server\""
+  }
+}
