@@ -9,7 +9,7 @@ import {
   TabPanels,
   TabPanel,
 } from "@chakra-ui/react";
-import { ExternalLinkIcon, InfoIcon } from "@chakra-ui/icons";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { Salon } from "../../models/Salon";
 import { WorkingHoursC } from "./WorkingHours";
 
@@ -42,9 +42,7 @@ export const SalonDetail = ({ salon }: SalonDetailProps) => {
             </Link>
           </Flex>
         </TabPanel>
-        <TabPanel>
-          Hi
-        </TabPanel>
+        <TabPanel>Hi</TabPanel>
       </TabPanels>
     </Tabs>
   );
