@@ -15,7 +15,10 @@ const salonsApi = createApi({
   endpoints(builder) {
     return {
       getSalons: builder.query<Salon[], void>({
-        query: () => "",
+        query: () => ({
+          url: "",
+          params: { _embed: "workingHours" },
+        }),
         providesTags: (result) =>
           result
             ? [
