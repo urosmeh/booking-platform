@@ -13,11 +13,13 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 
 export const Navbar = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const isSmallScreen = useBreakpointValue({ base: true, md: false });
   const handleDrawerToggle = () => setDrawerOpen(!isDrawerOpen);
+
   return (
     <Box bg="teal.500" px={4} color="white" alignSelf={"stretch"}>
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
@@ -34,8 +36,12 @@ export const Navbar = () => {
           />
         ) : (
           <Flex alignItems={"center"}>
-            <Link ml={10}>Home</Link>
-            <Link ml={10}>My bookings</Link>
+            <Link as={RouterLink} to="/" ml={10}>
+              Home
+            </Link>
+            <Link as={RouterLink} to="/bookings" ml={10}>
+              My bookings
+            </Link>
           </Flex>
         )}
 
@@ -45,8 +51,16 @@ export const Navbar = () => {
               <DrawerCloseButton />
               <VStack padding="6" spacing="24px">
                 ASdadsasdasdasd
-                <Link onClick={handleDrawerToggle}>Home</Link>
-                <Link onClick={handleDrawerToggle}>My bookings</Link>
+                <Link as={RouterLink} to="/" onClick={handleDrawerToggle}>
+                  Home
+                </Link>
+                <Link
+                  as={RouterLink}
+                  to="/bookings"
+                  onClick={handleDrawerToggle}
+                >
+                  My bookings
+                </Link>
               </VStack>
             </DrawerContent>
           </DrawerOverlay>

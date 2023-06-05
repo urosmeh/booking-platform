@@ -32,7 +32,6 @@ export const Home = () => {
     <Box>
       <Flex
         justifyContent={"center"}
-        p={10}
         direction={"column"}
         alignItems={"center"}
         gap={10}

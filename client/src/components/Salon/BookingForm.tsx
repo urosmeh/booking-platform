@@ -13,7 +13,6 @@ import {
   useToast,
 } from "@chakra-ui/react";
 
-import "react-datepicker/dist/react-datepicker.css";
 import { useState, useEffect, useCallback } from "react";
 import { usePostBookingMutation } from "../../store";
 
