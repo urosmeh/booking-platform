@@ -17,7 +17,11 @@ const bookingsApi = createApi({
   endpoints(builder) {
     return {
       getBookings: builder.query<Booking[], void>({
-        query: () => "",
+        query: () => ({
+          url: "/",
+          params: { _expand: "salon" },
+        }),
+
         providesTags: (result) =>
           result
             ? [
@@ -39,9 +43,22 @@ const bookingsApi = createApi({
         },
         invalidatesTags: ["Booking"],
       }),
+      deleteBooking: builder.mutation<void, number>({
+        query: (id) => {
+          return {
+            url: `/${id}`,
+            method: "DELETE",
+          };
+        },
+        invalidatesTags: ["Booking"],
+      }),
     };
   },
 });
 
-export const { useGetBookingsQuery, usePostBookingMutation } = bookingsApi;
+export const {
+  useGetBookingsQuery,
+  usePostBookingMutation,
+  useDeleteBookingMutation,
+} = bookingsApi;
 export { bookingsApi };

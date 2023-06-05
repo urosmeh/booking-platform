@@ -31,4 +31,5 @@ export { useGetCategoriesQuery } from "./apis/categoriesApi";
 export {
   useGetBookingsQuery,
   usePostBookingMutation,
+  useDeleteBookingMutation,
 } from "./apis/bookingsApi";

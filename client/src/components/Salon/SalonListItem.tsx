@@ -18,14 +18,27 @@ import { ClickableCard } from "../../ui/ClickableCard";
 
 type SalonListItemProps = {
   salon: Salon;
+  visitOn?: string;
+  unclickable?: boolean;
 };
 
-export const SalonListItem = ({ salon }: SalonListItemProps) => {
+export const SalonListItem = ({
+  salon,
+  visitOn,
+  unclickable,
+}: SalonListItemProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleOnOpen = () => {
+    if (unclickable === true) {
+      return;
+    }
+    onOpen();
+  };
 
   return (
     <>
-      <ClickableCard onClick={onOpen}>
+      <ClickableCard onClick={handleOnOpen}>
         <CardBody textAlign={"center"}>
           <Image src={salon.img} borderRadius={"md"} m={"0 auto"} />
           <Text
@@ -36,6 +49,7 @@ export const SalonListItem = ({ salon }: SalonListItemProps) => {
             {salon.name}
           </Text>
           <Text>{salon.city}</Text>
+          {visitOn && <Text>your appointment: {visitOn}</Text>}
         </CardBody>
       </ClickableCard>
       <Modal isOpen={isOpen} onClose={onClose}>
