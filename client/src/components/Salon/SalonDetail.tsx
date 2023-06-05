@@ -47,6 +47,7 @@ export const SalonDetail = ({ salon }: SalonDetailProps) => {
           <BookingForm
             salon={salon}
             user={{
+              id: 1,
               firstName: "Uros",
               lastName: "Meh",
               email: "uros.meh@gmail.com",

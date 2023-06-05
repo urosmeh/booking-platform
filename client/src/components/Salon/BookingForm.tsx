@@ -14,7 +14,8 @@ import {
 } from "@chakra-ui/react";
 
 import "react-datepicker/dist/react-datepicker.css";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { usePostBookingMutation } from "../../store";
 
 const services: Service[] = [
   {
@@ -36,21 +37,12 @@ type BookingFormType = {
   notes: string;
   service: number;
   salonId: number;
-} & User;
+  userId: number;
+} & Partial<User>;
 
 type BookingFormProps = {
   user: User;
   salon: Salon;
-};
-
-const defaultValues: BookingFormType = {
-  serviceDate: new Date().toISOString().slice(0, 16),
-  notes: "",
-  service: services[0].id,
-  salonId: 1,
-  firstName: "uros",
-  lastName: "meh",
-  email: "uros.meh@gmail.com",
 };
 
 export const BookingForm = ({ user, salon }: BookingFormProps) => {
@@ -58,19 +50,40 @@ export const BookingForm = ({ user, salon }: BookingFormProps) => {
     new Date().toISOString().slice(0, 16)
   );
 
+  const [postBooking, { isError, isLoading, isSuccess }] =
+    usePostBookingMutation();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm<BookingFormType>();
+
   const toast = useToast();
+
+  const defaultValues: BookingFormType = {
+    serviceDate: new Date().toISOString().slice(0, 16),
+    notes: "",
+    service: services[0].id,
+    salonId: salon.id,
+    userId: user.id,
+    firstName: user.firstName || "",
+    lastName: user.lastName || "",
+    email: user.email || "",
+  };
 
   const onSubmit: SubmitHandler<BookingFormType> = (formData) => {
     const selectedService = services.find(
       (service) => service.id === formData.service
     );
-    
+
+    postBooking({
+      userId: user.id,
+      salonId: salon.id,
+      at: new Date(serviceDate),
+    });
+
     toast({
       title: "Booking submitted",
       description: `You've successfully submitted your booking for service: ${
@@ -91,6 +104,36 @@ export const BookingForm = ({ user, salon }: BookingFormProps) => {
 
     reset(defaultValues);
   };
+
+  const getToast = useCallback(
+    (toastType: "success" | "error") => {
+      let description = "";
+      if (toastType === "success") {
+        description = "Booking successfully created!";
+      } else {
+        description = "There's been an error while creating a booking!";
+      }
+
+      return toast({
+        title: toastType === "success" ? "Success!" : "Error!",
+        description: description,
+        status: toastType,
+        duration: 3000,
+        isClosable: true,
+      });
+    },
+    [toast]
+  );
+
+  useEffect(() => {
+    if (isError) {
+      getToast("error");
+    }
+
+    if (isSuccess) {
+      getToast("success");
+    }
+  }, [isError, isSuccess, getToast]);
 
   return (
     <Flex as="form" direction={"column"} onSubmit={handleSubmit(onSubmit)}>
@@ -149,7 +192,13 @@ export const BookingForm = ({ user, salon }: BookingFormProps) => {
           onChange={(e) => setServiceDate(e.target.value)}
         />
       </FormControl>
-      <Button type="submit" backgroundColor={"green.300"} color={"white"}>
+      <Button
+        mt={4}
+        isLoading={isLoading}
+        type="submit"
+        backgroundColor={"green.300"}
+        color={"white"}
+      >
         Submit
       </Button>
     </Flex>
