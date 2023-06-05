@@ -1,6 +1,6 @@
-import { Card, Image, Text } from "@chakra-ui/react";
+import { Image, Text } from "@chakra-ui/react";
 import { Category } from "../../models/Category";
-import classes from "./CategoryListItem.module.css";
+import { ClickableCard } from "../../ui/ClickableCard";
 
 type CategoryListItemProps = {
   category: Category;
@@ -14,12 +14,12 @@ export const CategoryListItem = ({
   handleOnClick,
 }: CategoryListItemProps) => {
   return (
-    <Card
-      className={classes.clickable}
+    <ClickableCard
       onClick={() => handleOnClick(category.id)}
       maxW="sm"
       borderRadius="lg"
       borderWidth={selected ? 1 : 0}
+      filter={!selected ? "blur(1px)" : ""}
     >
       <Image
         src={category.img}
@@ -30,6 +30,6 @@ export const CategoryListItem = ({
       <Text margin={"0 auto"} mt={4}>
         {category.title}
       </Text>
-    </Card>
+    </ClickableCard>
   );
 };

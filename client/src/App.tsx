@@ -1,5 +1,5 @@
 import { useGetCategoriesQuery, useGetSalonsQuery } from "./store";
-import { Flex, Input, Spinner } from "@chakra-ui/react";
+import { Flex, Input, Spinner, Text } from "@chakra-ui/react";
 import { SalonList } from "./components/Salon/SalonList";
 import { useState } from "react";
 import { CategoryList } from "./components/Category/CategoryList";
@@ -45,6 +45,7 @@ function App() {
           selected={selectedCategory}
         />
       )}
+      {selectedCategory && <Text>Category: {selectedCategory?.title}</Text>}
       <Input
         placeholder="Salon name"
         size="md"
