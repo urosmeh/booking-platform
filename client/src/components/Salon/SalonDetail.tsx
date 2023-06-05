@@ -12,6 +12,7 @@ import {
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { Salon } from "../../models/Salon";
 import { WorkingHoursC } from "./WorkingHours";
+import { BookingForm } from "./BookingForm";
 
 type SalonDetailProps = {
   salon: Salon;
@@ -21,7 +22,7 @@ export const SalonDetail = ({ salon }: SalonDetailProps) => {
     <Tabs variant={"enclosed"}>
       <TabList>
         <Tab>Info</Tab>
-        <Tab>Book a visit</Tab>
+        <Tab>Book</Tab>
       </TabList>
       <TabPanels>
         <TabPanel>
@@ -33,7 +34,7 @@ export const SalonDetail = ({ salon }: SalonDetailProps) => {
                 {salon.workingHours.length ? (
                   <WorkingHoursC workingHours={salon.workingHours[0]} />
                 ) : (
-                  "No working hours found."
+                  <Text alignSelf={"end"}>No working hours found.</Text>
                 )}
               </Flex>
             </Flex>
@@ -42,7 +43,16 @@ export const SalonDetail = ({ salon }: SalonDetailProps) => {
             </Link>
           </Flex>
         </TabPanel>
-        <TabPanel>Hi</TabPanel>
+        <TabPanel>
+          <BookingForm
+            salon={salon}
+            user={{
+              firstName: "Uros",
+              lastName: "Meh",
+              email: "uros.meh@gmail.com",
+            }}
+          />
+        </TabPanel>
       </TabPanels>
     </Tabs>
   );

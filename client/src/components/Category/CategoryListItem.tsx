@@ -1,4 +1,4 @@
-import { Image, Text } from "@chakra-ui/react";
+import { Image, Show, Text } from "@chakra-ui/react";
 import { Category } from "../../models/Category";
 import { ClickableCard } from "../../ui/ClickableCard";
 
@@ -27,9 +27,11 @@ export const CategoryListItem = ({
         m={"10%"}
         borderRadius={"50%"}
       />
-      <Text margin={"0 auto"} mt={4}>
-        {category.title}
-      </Text>
+      <Show breakpoint="(min-width: 400px)">
+        <Text margin={"0 auto"} mt={4}>
+          {category.title}
+        </Text>
+      </Show>
     </ClickableCard>
   );
 };
