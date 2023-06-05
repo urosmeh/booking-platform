@@ -74,14 +74,10 @@ export const BookingForm = ({ user, salon }: BookingFormProps) => {
   };
 
   const onSubmit: SubmitHandler<BookingFormType> = (formData) => {
-    const selectedService = services.find(
-      (service) => service.id === formData.service
-    );
-
     postBooking({
       userId: user.id,
       salonId: salon.id,
-      at: new Date(serviceDate),
+      at: new Date(formData.serviceDate),
     });
 
     reset(defaultValues);
