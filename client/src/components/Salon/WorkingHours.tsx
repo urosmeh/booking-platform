@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { WorkingHours } from "../../models/WorkingHours";
 
 type WorkingHoursProps = {
@@ -11,9 +11,9 @@ export const WorkingHoursC = ({ workingHours }: WorkingHoursProps) => {
         const [day, value] = obj;
         if (day === "salonId") return;
         return (
-          <div key={day}>
+          <Box key={day}>
             {day}: {value ? value : "Closed"}
-          </div>
+          </Box>
         );
       })}
     </Flex>

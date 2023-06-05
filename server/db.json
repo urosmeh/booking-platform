@@ -157,5 +157,25 @@
       "title": "Barber",
       "img": "https://img.icons8.com/ios/100/barber-clippers.png"
     }
+  ],
+  "bookings": [
+    {
+      "userId": 1,
+      "salonId": 1,
+      "at": "asdf",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "salonId": 1,
+      "at": "2023-06-05T17:47:00.000Z",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "salonId": 2,
+      "at": "2023-06-05T17:57:00.000Z",
+      "id": 3
+    }
   ]
 }

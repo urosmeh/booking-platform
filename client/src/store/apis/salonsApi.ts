@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { apiUrl, Endpoints } from "../constants";
+import { apiUrl, Endpoints } from "../endpointsEnum";
 import { Salon } from "../../models/Salon";
 
 export type GetSalonRequest = {
