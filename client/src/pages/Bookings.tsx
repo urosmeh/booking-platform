@@ -17,15 +17,7 @@ export const Bookings = () => {
         <SalonListItem
           salon={b.salon}
           unclickable
-          visitOn={new Date(b.at)
-            .toLocaleString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-              hour: "numeric",
-              minute: "numeric",
-            })
-            .slice(0, 16)}
+          visitOn={new Date(b.at).toUTCString()}
           key={b.id}
         />
       ))}
